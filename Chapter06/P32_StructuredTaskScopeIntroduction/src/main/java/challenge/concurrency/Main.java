@@ -1,35 +1,36 @@
 package challenge.concurrency;
 
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.concurrent.StructuredTaskScope.Subtask;
-import java.util.concurrent.StructuredTaskScope.Subtask.State;
 import java.util.logging.Logger;
 
 public class Main {
 
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
-        
-        try (StructuredTaskScope scope = new StructuredTaskScope<String>()) {                    
+                
+        // StructuredTaskScope<Contract, Void>
+        try (var scope = StructuredTaskScope.open()) {                    
 
-           Subtask<String> roadSubtask = scope.fork(() -> 
-                new HighwayServiceCompany("BestRoads").signPartType(HighwaySignPartType.ROAD));        
-           Subtask<String> tunnelSubtask = scope.fork(() ->
-                new HighwayServiceCompany("TunnelsCo").signPartType(HighwaySignPartType.TUNNEL));
-           Subtask<String> bridgeSubtask = scope.fork(() ->
-                new HighwayServiceCompany("TheBridges").signPartType(HighwaySignPartType.BRIDGE));                       
-        
-           scope.join();
+           Subtask<RoadContract> roadSubtask = scope.fork(() -> 
+                (RoadContract) new HighwayServiceCompany("BestRoads")
+                        .signPartType(HighwaySignPartType.ROAD));        
+           Subtask<TunnelContract> tunnelSubtask = scope.fork(() ->
+                (TunnelContract) new HighwayServiceCompany("TunnelsCo")
+                        .signPartType(HighwaySignPartType.TUNNEL));
+           Subtask<BridgeContract> bridgeSubtask = scope.fork(() ->
+                (BridgeContract) new HighwayServiceCompany("TheBridges")
+                        .signPartType(HighwaySignPartType.BRIDGE));                       
+                 
+           scope.join(); // Join subtasks, propagating exceptions
            
+           // All subtasks have succeeded, so compose their results
            HighwayContract contract = new HighwayContract(
-                   roadSubtask.state().equals(State.SUCCESS) ? roadSubtask.get() : "not signed",
-                   tunnelSubtask.state().equals(State.SUCCESS) ? tunnelSubtask.get() : "not signed", 
-                   bridgeSubtask.state().equals(State.SUCCESS) ? bridgeSubtask.get() : "not signed");
+                   roadSubtask.get(), tunnelSubtask.get(), bridgeSubtask.get());
         
            logger.info(contract.toString());
         }

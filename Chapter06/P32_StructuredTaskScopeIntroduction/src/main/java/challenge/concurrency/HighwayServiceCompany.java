@@ -12,11 +12,13 @@ public class HighwayServiceCompany {
         this.name = name;
     }
     
-    public String signPartType(HighwaySignPartType bpt) {        
+    public Contract signPartType(HighwaySignPartType bpt) {   
+        
         logger.info(() -> "Preparing " + bpt 
                 + " contract by " + name
                 + " (" + Thread.currentThread().toString() + ")");
-        return name + " - " + bpt;
+        
+        return bpt.getContract();
     }
 
     public String getName() {
