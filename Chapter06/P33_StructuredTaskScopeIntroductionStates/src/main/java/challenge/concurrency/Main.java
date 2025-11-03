@@ -15,39 +15,36 @@ public class Main {
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
                 
-        Subtask<RoadContract> roadSubtask = null;
-        Subtask<TunnelContract> tunnelSubtask = null;
-        Subtask<BridgeContract> bridgeSubtask = null;
-                
-        // StructuredTaskScope<Contract, Void>
+        Subtask<Mqtt> mqttSubtask = null;
+        Subtask<Amqp> amqpSubtask = null;
+        Subtask<Xmpp> xmppSubtask = null;
+        
+        // StructuredTaskScope<Protocol, Void>
         try (var scope = StructuredTaskScope.open()) {                    
 
-           roadSubtask = scope.fork(() -> 
-                (RoadContract) new HighwayServiceCompany("BestRoads")
-                        .signPartType(HighwaySignPartType.ROAD));        
-           tunnelSubtask = scope.fork(() ->
-                (TunnelContract) new HighwayServiceCompany("TunnelsCo")
-                        .signPartType(HighwaySignPartType.TUNNEL));
-           bridgeSubtask = scope.fork(() ->
-                (BridgeContract) new HighwayServiceCompany("TheBridges")
-                        .signPartType(HighwaySignPartType.BRIDGE));                       
+           mqttSubtask = scope.fork(() -> 
+                (Mqtt) new Service("IoTService").start(ServiceType.MQTT));                              
+           amqpSubtask = scope.fork(() ->
+                (Amqp) new Service("MsgService").start(ServiceType.AMQP));                        
+           xmppSubtask = scope.fork(() ->
+                (Xmpp) new Service("CrossService").start(ServiceType.XMPP));                        
                  
            scope.join(); // Join subtasks, propagating exceptions
            
            // All subtasks have succeeded, so compose their results
-           HighwayContract contract = new HighwayContract(
-                   roadSubtask.get(), tunnelSubtask.get(), bridgeSubtask.get());
+           ServiceStack ss = new ServiceStack(
+                   amqpSubtask.get(), xmppSubtask.get(), mqttSubtask.get());
         
-           logger.info(contract.toString());
+           logger.info(ss.toString());
         } catch (FailedException e) {
             
-            State roadSubtaskState = roadSubtask.state();
-            State tunnelSubtaskState = tunnelSubtask.state();
-            State bridgeSubtaskState = bridgeSubtask.state();
+            State mqttSubtaskState = mqttSubtask.state();
+            State amqpSubtaskState = amqpSubtask.state();
+            State xmppSubtaskState = xmppSubtask.state();
                        
-            logger.info(() -> "Road subtask state: " + roadSubtaskState);
-            logger.info(() -> "Tunnel subtask state: " + tunnelSubtaskState);
-            logger.info(() -> "Bridge subtask state: " + bridgeSubtaskState);
+            logger.info(() -> "MQTT-based service state: " + mqttSubtaskState);
+            logger.info(() -> "AMWP-based service state: " + amqpSubtaskState);
+            logger.info(() -> "XMPP-based service state: " + xmppSubtaskState);
             
             throw e.getCause();
         }

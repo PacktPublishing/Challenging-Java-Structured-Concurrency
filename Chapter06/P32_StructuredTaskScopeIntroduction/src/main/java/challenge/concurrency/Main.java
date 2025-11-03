@@ -13,26 +13,23 @@ public class Main {
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
                 
-        // StructuredTaskScope<Contract, Void>
+        // StructuredTaskScope<Protocol, Void>
         try (var scope = StructuredTaskScope.open()) {                    
 
-           Subtask<RoadContract> roadSubtask = scope.fork(() -> 
-                (RoadContract) new HighwayServiceCompany("BestRoads")
-                        .signPartType(HighwaySignPartType.ROAD));        
-           Subtask<TunnelContract> tunnelSubtask = scope.fork(() ->
-                (TunnelContract) new HighwayServiceCompany("TunnelsCo")
-                        .signPartType(HighwaySignPartType.TUNNEL));
-           Subtask<BridgeContract> bridgeSubtask = scope.fork(() ->
-                (BridgeContract) new HighwayServiceCompany("TheBridges")
-                        .signPartType(HighwaySignPartType.BRIDGE));                       
+           Subtask<Mqtt> mqttSubtask = scope.fork(() -> 
+                (Mqtt) new Service("IoTService").start(ServiceType.MQTT));                              
+           Subtask<Amqp> amqpSubtask = scope.fork(() ->
+                (Amqp) new Service("MsgService").start(ServiceType.AMQP));                        
+           Subtask<Xmpp> xmppSubtask = scope.fork(() ->
+                (Xmpp) new Service("CrossService").start(ServiceType.XMPP));                        
                  
            scope.join(); // Join subtasks, propagating exceptions
            
            // All subtasks have succeeded, so compose their results
-           HighwayContract contract = new HighwayContract(
-                   roadSubtask.get(), tunnelSubtask.get(), bridgeSubtask.get());
+           ServiceStack ss = new ServiceStack(
+                   amqpSubtask.get(), xmppSubtask.get(), mqttSubtask.get());
         
-           logger.info(contract.toString());
+           logger.info(ss.toString());
         }
     }       
 }
