@@ -14,20 +14,21 @@ public class Main {
 
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
-        
-        try (ExecutorService executor = Executors.newFixedThreadPool(3)) {                    
 
-           Future<String> roadFuture = executor.submit(() -> 
-                new HighwayServiceCompany("BestRoads").signPartType(HighwaySignPartType.ROAD));        
-           Future<String> tunnelFuture = executor.submit(() ->
-                new HighwayServiceCompany("TunnelsCo").signPartType(HighwaySignPartType.TUNNEL));
-           Future<String> bridgeFuture = executor.submit(() ->
-                new HighwayServiceCompany("TheBridges").signPartType(HighwaySignPartType.BRIDGE));                       
-        
-           HighwayContract contract = new HighwayContract(roadFuture.get(), 
-           tunnelFuture.get(), bridgeFuture.get());
-        
-           logger.info(contract.toString());
+        try (ExecutorService executor = Executors.newFixedThreadPool(3)) {
+            Future<Protocol> mqttFuture = executor.submit(()
+                    -> new Service("IoTService").start(ServiceType.MQTT));
+            Future<Protocol> amqpFuture = executor.submit(()
+                    -> new Service("MsgService").start(ServiceType.AMQP));
+            Future<Protocol> xmppFuture = executor.submit(()
+                    -> new Service("CrossService").start(ServiceType.XMPP));
+
+            ServiceStack ss = new ServiceStack(
+                    (Amqp) amqpFuture.get(),
+                    (Xmpp) xmppFuture.get(),
+                    (Mqtt) mqttFuture.get());
+
+            logger.info(ss.toString());
         }
-    }       
+    }
 }

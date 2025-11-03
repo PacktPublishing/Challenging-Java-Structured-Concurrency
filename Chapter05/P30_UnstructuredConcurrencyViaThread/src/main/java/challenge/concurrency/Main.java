@@ -11,24 +11,26 @@ public class Main {
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
 
-        HighwayContractSignThread roadThread = new HighwayContractSignThread(
-                new HighwayServiceCompany("BestRoads"), HighwaySignPartType.ROAD);
-        HighwayContractSignThread tunnelThread = new HighwayContractSignThread(
-                new HighwayServiceCompany("TunnelsCo"), HighwaySignPartType.TUNNEL);
-        HighwayContractSignThread bridgeThread = new HighwayContractSignThread(
-                new HighwayServiceCompany("TheBridges"), HighwaySignPartType.BRIDGE);
+        ServiceThread amqpThread = new ServiceThread(
+                new Service("MsgService"), ServiceType.AMQP);
+        ServiceThread xmppThread = new ServiceThread(
+                new Service("CrossService"), ServiceType.XMPP);
+        ServiceThread mqttThread = new ServiceThread(
+                new Service("IoTService"), ServiceType.MQTT);                
+                
+        amqpThread.start();
+        xmppThread.start();
+        mqttThread.start();
+                
+        amqpThread.join();
+        xmppThread.join();
+        mqttThread.join();
         
-        roadThread.start();
-        tunnelThread.start();
-        bridgeThread.start();
+        ServiceStack ss = new ServiceStack(
+                (Amqp) amqpThread.getProtocol(),
+                (Xmpp) xmppThread.getProtocol(),
+                (Mqtt) mqttThread.getProtocol());
         
-        roadThread.join();
-        tunnelThread.join();
-        bridgeThread.join();
-        
-        HighwayContract contract = new HighwayContract(
-                roadThread.getHighwayPart(), tunnelThread.getHighwayPart(), bridgeThread.getHighwayPart());
-        
-        logger.info(contract.toString());
+        logger.info(ss.toString());
     }       
 }

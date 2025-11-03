@@ -13,24 +13,22 @@ public class Main {
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
             
-        CompletableFuture<HighwayContract> contractCf 
-                = roadConnectionsCf("TunnelsCo", HighwaySignPartType.TUNNEL)
-                .thenCombine(roadConnectionsCf("TheBridges", HighwaySignPartType.BRIDGE), 
-                        (t, b) -> {
-                            String r = new HighwayServiceCompany("BestRoads")
-                                    .signPartType(HighwaySignPartType.ROAD);
+        CompletableFuture<ServiceStack> servicesCf 
+                = serviceCf("IoTService", ServiceType.MQTT)
+                .thenCombine(serviceCf("MsgService", ServiceType.AMQP), 
+                        (iot, msg) -> {
+                            Protocol cross = new Service("CrossService").start(ServiceType.XMPP);
                             
-                            return  new HighwayContract(r, t, b);
+                            return  new ServiceStack((Amqp) msg, (Xmpp) cross, (Mqtt) iot);
                         });
                 
-        HighwayContract contract = contractCf.get();
-        logger.info(contract.toString());        
+        ServiceStack ss = servicesCf.get();
+        logger.info(ss.toString());        
     }     
     
-    private static CompletableFuture<String> roadConnectionsCf(
-            String cn, HighwaySignPartType hspt) {
+    private static CompletableFuture<Protocol> serviceCf(String sn, ServiceType st) {
         return CompletableFuture.supplyAsync(() -> {
-            return new HighwayServiceCompany(cn).signPartType(hspt);
+            return new Service(sn).start(st);
         });
     }
 }

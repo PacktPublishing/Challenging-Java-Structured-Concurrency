@@ -10,28 +10,28 @@ public class Main {
 
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
-    public static void main(String[] args) throws TimeoutException, InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
 
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
-            
-        CompletableFuture<String> roadsCf = CompletableFuture.supplyAsync(() -> {
-            return new HighwayServiceCompany("BestRoads").signPartType(HighwaySignPartType.ROAD);
+
+        CompletableFuture<Mqtt> iotServiceCf = CompletableFuture.supplyAsync(() -> {
+            return (Mqtt) new Service("IoTService").start(ServiceType.MQTT);
         });
-        
-        CompletableFuture<String> tunnelsCf = CompletableFuture.supplyAsync(() -> {
-            return new HighwayServiceCompany("TunnelsCo").signPartType(HighwaySignPartType.TUNNEL);
+
+        CompletableFuture<Amqp> msgServiceCf = CompletableFuture.supplyAsync(() -> {
+            return (Amqp) new Service("MsgService").start(ServiceType.AMQP);
         });
-        
-        CompletableFuture<String> bridgesCf = CompletableFuture.supplyAsync(() -> {
-            return new HighwayServiceCompany("TheBridges").signPartType(HighwaySignPartType.BRIDGE);
+
+        CompletableFuture<Xmpp> crossServiceCf = CompletableFuture.supplyAsync(() -> {
+            return (Xmpp) new Service("CrossService").start(ServiceType.XMPP);
         });
-                
-        CompletableFuture.allOf(roadsCf, tunnelsCf, bridgesCf).get(3, TimeUnit.SECONDS);
-        
-        HighwayContract contract = new HighwayContract(
-                roadsCf.resultNow(), tunnelsCf.resultNow(), bridgesCf.resultNow());
-        
-        logger.info(contract.toString());        
-    }             
+
+        CompletableFuture.allOf(iotServiceCf, msgServiceCf, crossServiceCf).get(3, TimeUnit.SECONDS);
+
+        ServiceStack ss = new ServiceStack(
+                msgServiceCf.resultNow(), crossServiceCf.resultNow(), iotServiceCf.resultNow());
+
+        logger.info(ss.toString());
+    }
 }
