@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>CableOneServices</title>
+    <style>
+        .overlay{
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: rgba(255,255,255,0.8) url("loader.gif") center no-repeat;
+        }
+        body.loading{
+            overflow: hidden;   
+        }
+        body.loading .overlay{
+            display: block;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).on("click", "button", function(){
+            $.get("/healthcheck/Mark", function(data){
+                $("body").html(data);
+            });       
+        });
+        $(document).on({
+            ajaxStart: function(){
+                $("body").addClass("loading"); 
+            },
+            ajaxStop: function(){ 
+                $("body").removeClass("loading"); 
+            }    
+        });
+    </script>
+    </head>
+    <body style="text-align: center;">
+        <button type="button">CableOne Services Check (Mark)</button>
+        <p>Mark, click the above button to verify the health of your services (Internet, Mobile, TV)</p>
+        <div class="overlay"></div>
+    </body>
+</html>
