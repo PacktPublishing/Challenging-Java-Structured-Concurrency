@@ -1,0 +1,478 @@
+{
+  "threadDump": {
+    "processId": "18312",
+    "time": "2025-11-20T07:49:41.638558800Z",
+    "runtimeVersion": "25+37-LTS-3491",
+    "threadContainers": [
+      {
+        "container": "<root>",
+        "parent": null,
+        "owner": null,
+        "threads": [
+          {
+            "tid": "3",
+            "time": "2025-11-20T07:49:41.647559100Z",
+            "name": "main",
+            "state": "WAITING",
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:369)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:305)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl.join(StructuredTaskScopeImpl.java:243)",
+              "challenge.concurrency.Main.findECS(Main.java:85)",
+              "challenge.concurrency.Main.lambda$main$6(Main.java:50)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:419)",
+              "challenge.concurrency.Main.main(Main.java:50)"
+            ]
+          },
+          {
+            "tid": "14",
+            "time": "2025-11-20T07:49:41.649558600Z",
+            "name": "Reference Handler",
+            "state": "RUNNABLE",
+            "stack": [
+              "java.base\/java.lang.ref.Reference.waitForReferencePendingList(Native Method)",
+              "java.base\/java.lang.ref.Reference.processPendingReferences(Reference.java:246)",
+              "java.base\/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)"
+            ]
+          },
+          {
+            "tid": "15",
+            "time": "2025-11-20T07:49:41.649558600Z",
+            "name": "Finalizer",
+            "state": "WAITING",
+            "waitingOn": "java.lang.ref.ReferenceQueue$Lock@618d55b9",
+            "stack": [
+              "java.base\/java.lang.Object.wait0(Native Method)",
+              "java.base\/java.lang.Object.wait(Object.java:389)",
+              "java.base\/java.lang.Object.wait(Object.java:351)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:137)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:215)",
+              "java.base\/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:165)"
+            ],
+            "monitorsOwned": [
+              {
+                "depth": 4,
+                "locks": [
+                  "java.lang.ref.ReferenceQueue$Lock@618d55b9"
+                ]
+              }
+            ]
+          },
+          {
+            "tid": "16",
+            "time": "2025-11-20T07:49:41.655558900Z",
+            "name": "Signal Dispatcher",
+            "state": "RUNNABLE",
+            "stack": [
+            ]
+          },
+          {
+            "tid": "17",
+            "time": "2025-11-20T07:49:41.655558900Z",
+            "name": "Attach Listener",
+            "state": "RUNNABLE",
+            "stack": [
+              "java.base\/jdk.internal.vm.ThreadSnapshot.create(Native Method)",
+              "java.base\/jdk.internal.vm.ThreadSnapshot.of(ThreadSnapshot.java:60)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThread(ThreadDumper.java:316)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreads(ThreadDumper.java:291)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToJson(ThreadDumper.java:266)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToFile(ThreadDumper.java:131)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToJson(ThreadDumper.java:89)"
+            ]
+          },
+          {
+            "tid": "24",
+            "time": "2025-11-20T07:49:41.656558400Z",
+            "name": "Notification Thread",
+            "state": "RUNNABLE",
+            "stack": [
+            ]
+          },
+          {
+            "tid": "25",
+            "time": "2025-11-20T07:49:41.656558400Z",
+            "name": "Common-Cleaner",
+            "state": "TIMED_WAITING",
+            "waitingOn": "java.lang.ref.ReferenceQueue$Lock@4a702771",
+            "stack": [
+              "java.base\/java.lang.Object.wait0(Native Method)",
+              "java.base\/java.lang.Object.wait(Object.java:389)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:123)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:201)",
+              "java.base\/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:146)",
+              "java.base\/java.lang.Thread.run(Thread.java:1474)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+            ],
+            "monitorsOwned": [
+              {
+                "depth": 3,
+                "locks": [
+                  "java.lang.ref.ReferenceQueue$Lock@4a702771"
+                ]
+              }
+            ]
+          },
+          {
+            "tid": "27",
+            "time": "2025-11-20T07:49:41.656558400Z",
+            "name": "VirtualThread-unblocker",
+            "state": "RUNNABLE",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.takeVirtualThreadListToUnblock(Native Method)",
+              "java.base\/java.lang.VirtualThread.unblockVirtualThreads(VirtualThread.java:1507)",
+              "java.base\/java.lang.Thread.run(Thread.java:1474)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+            ]
+          }
+        ],
+        "threadCount": "8"
+      },
+      {
+        "container": "ForkJoinPool-1\/jdk.internal.vm.SharedThreadContainer@4a5a9c1b",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+          {
+            "tid": "29",
+            "time": "2025-11-20T07:49:41.662558900Z",
+            "name": "ForkJoinPool-1-worker-1",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "31",
+            "time": "2025-11-20T07:49:41.662558900Z",
+            "name": "ForkJoinPool-1-worker-2",
+            "state": "TIMED_WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "32",
+            "time": "2025-11-20T07:49:41.663557900Z",
+            "name": "ForkJoinPool-1-worker-3",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "33",
+            "time": "2025-11-20T07:49:41.663557900Z",
+            "name": "ForkJoinPool-1-worker-4",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "37",
+            "time": "2025-11-20T07:49:41.664557900Z",
+            "name": "ForkJoinPool-1-worker-5",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "39",
+            "time": "2025-11-20T07:49:41.664557900Z",
+            "name": "ForkJoinPool-1-worker-6",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "42",
+            "time": "2025-11-20T07:49:41.664557900Z",
+            "name": "ForkJoinPool-1-worker-7",
+            "state": "WAITING",
+            "parkBlocker": {
+              "object": "java.util.concurrent.ForkJoinPool@7db1737b"
+            },
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2109)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2063)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2027)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+            ]
+          },
+          {
+            "tid": "43",
+            "time": "2025-11-20T07:49:41.664557900Z",
+            "name": "ForkJoinPool-1-delayScheduler",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.DelayScheduler.loop(DelayScheduler.java:253)",
+              "java.base\/java.util.concurrent.DelayScheduler.run(DelayScheduler.java:221)"
+            ]
+          }
+        ],
+        "threadCount": "8"
+      },
+      {
+        "container": "ForkJoinPool.commonPool\/jdk.internal.vm.SharedThreadContainer@17c7faa7",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+        ],
+        "threadCount": "0"
+      },
+      {
+        "container": "java.util.concurrent.ThreadPoolExecutor@2d32f804",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+        ],
+        "threadCount": "0"
+      },
+      {
+        "container": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@9630600",
+        "parent": "<root>",
+        "owner": "3",
+        "threads": [
+          {
+            "tid": "28",
+            "time": "2025-11-20T07:49:41.666558500Z",
+            "virtual": true,
+            "name": "ecs-0",
+            "state": "WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.park(VirtualThread.java:738)",
+              "java.base\/java.lang.System$1.parkVirtualThread(System.java:2284)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:367)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:305)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl.join(StructuredTaskScopeImpl.java:243)",
+              "challenge.concurrency.Main.findPrivateECS(Main.java:110)",
+              "challenge.concurrency.Main.lambda$findECS$2(Main.java:79)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:419)",
+              "challenge.concurrency.Main.lambda$findECS$1(Main.java:79)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "30",
+            "time": "2025-11-20T07:49:41.666558500Z",
+            "virtual": true,
+            "name": "ecs-1",
+            "state": "WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.park(VirtualThread.java:738)",
+              "java.base\/java.lang.System$1.parkVirtualThread(System.java:2284)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:367)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:305)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl.join(StructuredTaskScopeImpl.java:243)",
+              "challenge.concurrency.Main.findPublicECS(Main.java:148)",
+              "challenge.concurrency.Main.lambda$findECS$3(Main.java:83)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          }
+        ],
+        "threadCount": "2"
+      },
+      {
+        "container": "PrivateECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@14d795fb",
+        "parent": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@9630600",
+        "owner": "28",
+        "threads": [
+          {
+            "tid": "34",
+            "time": "2025-11-20T07:49:41.667558800Z",
+            "virtual": true,
+            "name": "privateECS-0",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PrivateECSLocator.greenEnergyLocator(PrivateECSLocator.java:22)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$2(Main.java:103)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "35",
+            "time": "2025-11-20T07:49:41.668558600Z",
+            "virtual": true,
+            "name": "privateECS-1",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PrivateECSLocator.carElectricLocator(PrivateECSLocator.java:51)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$4(Main.java:106)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:419)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$3(Main.java:106)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "38",
+            "time": "2025-11-20T07:49:41.668558600Z",
+            "virtual": true,
+            "name": "privateECS-2",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PrivateECSLocator.electricChargeLocator(PrivateECSLocator.java:86)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$5(Main.java:108)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          }
+        ],
+        "threadCount": "3"
+      },
+      {
+        "container": "PublicECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@2daf159f",
+        "parent": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@9630600",
+        "owner": "30",
+        "threads": [
+          {
+            "tid": "36",
+            "time": "2025-11-20T07:49:41.669558800Z",
+            "virtual": true,
+            "name": "publicECS-0",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PublicECSLocator.ecsMotelsLocator(PublicECSLocator.java:88)",
+              "challenge.concurrency.Main.lambda$findPublicECS$2(Main.java:141)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "40",
+            "time": "2025-11-20T07:49:41.669558800Z",
+            "virtual": true,
+            "name": "publicECS-1",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PublicECSLocator.ecsHighwayLocator(PublicECSLocator.java:26)",
+              "challenge.concurrency.Main.lambda$findPublicECS$4(Main.java:143)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:419)",
+              "challenge.concurrency.Main.lambda$findPublicECS$3(Main.java:143)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "41",
+            "time": "2025-11-20T07:49:41.669558800Z",
+            "virtual": true,
+            "name": "publicECS-2",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PublicECSLocator.ecsMallParkingLocator(PublicECSLocator.java:59)",
+              "challenge.concurrency.Main.lambda$findPublicECS$5(Main.java:144)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          },
+          {
+            "tid": "44",
+            "time": "2025-11-20T07:49:41.670558500Z",
+            "virtual": true,
+            "name": "publicECS-3",
+            "state": "TIMED_WAITING",
+            "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:780)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:971)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:507)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:540)",
+              "challenge.concurrency.PublicECSLocator.ecsDriveInLocator(PublicECSLocator.java:119)",
+              "challenge.concurrency.Main.lambda$findPublicECS$7(Main.java:146)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:419)",
+              "challenge.concurrency.Main.lambda$findPublicECS$6(Main.java:146)",
+              "java.base\/java.util.concurrent.StructuredTaskScopeImpl$SubtaskImpl.run(StructuredTaskScopeImpl.java:325)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:456)"
+            ]
+          }
+        ],
+        "threadCount": "4"
+      }
+    ]
+  }
+}

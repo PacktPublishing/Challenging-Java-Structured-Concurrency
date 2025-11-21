@@ -1,0 +1,432 @@
+{
+  "threadDump": {
+    "processId": "18672",
+    "time": "2025-06-09T13:50:56.329919400Z",
+    "runtimeVersion": "24+36-3646",
+    "threadContainers": [
+      {
+        "container": "<root>",
+        "parent": null,
+        "owner": null,
+        "threads": [
+         {
+           "tid": "3",
+           "name": "main",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:369)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:312)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.implJoin(StructuredTaskScope.java:618)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.join(StructuredTaskScope.java:647)",
+              "challenge.concurrency.Main.findECS(Main.java:76)",
+              "challenge.concurrency.Main.lambda$main$6(Main.java:50)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:422)",
+              "challenge.concurrency.Main.main(Main.java:50)"
+           ]
+         },
+         {
+           "tid": "14",
+           "name": "Reference Handler",
+           "stack": [
+              "java.base\/java.lang.ref.Reference.waitForReferencePendingList(Native Method)",
+              "java.base\/java.lang.ref.Reference.processPendingReferences(Reference.java:246)",
+              "java.base\/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)"
+           ]
+         },
+         {
+           "tid": "15",
+           "name": "Finalizer",
+           "stack": [
+              "java.base\/java.lang.Object.wait0(Native Method)",
+              "java.base\/java.lang.Object.wait(Object.java:389)",
+              "java.base\/java.lang.Object.wait(Object.java:351)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:138)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)",
+              "java.base\/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:165)"
+           ]
+         },
+         {
+           "tid": "16",
+           "name": "Signal Dispatcher",
+           "stack": [
+           ]
+         },
+         {
+           "tid": "17",
+           "name": "Attach Listener",
+           "stack": [
+              "java.base\/java.lang.Thread.getStackTrace(Thread.java:2166)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadToJson(ThreadDumper.java:270)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToJson(ThreadDumper.java:242)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToJson(ThreadDumper.java:206)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToFile(ThreadDumper.java:117)",
+              "java.base\/jdk.internal.vm.ThreadDumper.dumpThreadsToJson(ThreadDumper.java:85)"
+           ]
+         },
+         {
+           "tid": "24",
+           "name": "Notification Thread",
+           "stack": [
+           ]
+         },
+         {
+           "tid": "25",
+           "name": "Common-Cleaner",
+           "stack": [
+              "java.base\/java.lang.Object.wait0(Native Method)",
+              "java.base\/java.lang.Object.wait(Object.java:389)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:124)",
+              "java.base\/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:215)",
+              "java.base\/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)",
+              "java.base\/java.lang.Thread.run(Thread.java:1447)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+           ]
+         },
+         {
+           "tid": "27",
+           "name": "VirtualThread-unblocker",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.takeVirtualThreadListToUnblock(Native Method)",
+              "java.base\/java.lang.VirtualThread.unblockVirtualThreads(VirtualThread.java:1489)",
+              "java.base\/java.lang.Thread.run(Thread.java:1447)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+           ]
+         }
+        ],
+        "threadCount": "8"
+      },
+      {
+        "container": "java.util.concurrent.ThreadPoolExecutor@8c1445f",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+        ],
+        "threadCount": "0"
+      },
+      {
+        "container": "ForkJoinPool.commonPool\/jdk.internal.vm.SharedThreadContainer@3ec2478a",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+        ],
+        "threadCount": "0"
+      },
+      {
+        "container": "ForkJoinPool-1\/jdk.internal.vm.SharedThreadContainer@468855fb",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+         {
+           "tid": "29",
+           "name": "ForkJoinPool-1-worker-1",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "31",
+           "name": "ForkJoinPool-1-worker-2",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "32",
+           "name": "ForkJoinPool-1-worker-3",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "35",
+           "name": "ForkJoinPool-1-worker-4",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "37",
+           "name": "ForkJoinPool-1-worker-5",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "39",
+           "name": "ForkJoinPool-1-worker-6",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "41",
+           "name": "ForkJoinPool-1-worker-7",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         },
+         {
+           "tid": "44",
+           "name": "ForkJoinPool-1-worker-8",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:2059)",
+              "java.base\/java.util.concurrent.ForkJoinPool.deactivate(ForkJoinPool.java:2013)",
+              "java.base\/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1978)",
+              "java.base\/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)"
+           ]
+         }
+        ],
+        "threadCount": "8"
+      },
+      {
+        "container": "java.util.concurrent.ScheduledThreadPoolExecutor@3b07d329",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+         {
+           "tid": "46",
+           "name": "VirtualThread-unparker",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)",
+              "java.base\/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1802)",
+              "java.base\/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1166)",
+              "java.base\/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:883)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1021)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1081)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619)",
+              "java.base\/java.lang.Thread.run(Thread.java:1447)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+           ]
+         }
+        ],
+        "threadCount": "1"
+      },
+      {
+        "container": "java.util.concurrent.ScheduledThreadPoolExecutor@776ec8df",
+        "parent": "<root>",
+        "owner": null,
+        "threads": [
+         {
+           "tid": "45",
+           "name": "VirtualThread-unparker",
+           "stack": [
+              "java.base\/jdk.internal.misc.Unsafe.park(Native Method)",
+              "java.base\/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)",
+              "java.base\/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1802)",
+              "java.base\/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1166)",
+              "java.base\/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:883)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1021)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1081)",
+              "java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619)",
+              "java.base\/java.lang.Thread.run(Thread.java:1447)",
+              "java.base\/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)"
+           ]
+         }
+        ],
+        "threadCount": "1"
+      },
+      {
+        "container": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@2346f1dd",
+        "parent": "<root>",
+        "owner": "3",
+        "threads": [
+         {
+           "tid": "28",
+           "name": "ecs-0",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.park(VirtualThread.java:746)",
+              "java.base\/java.lang.System$1.parkVirtualThread(System.java:2279)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:367)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:312)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.implJoin(StructuredTaskScope.java:618)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.join(StructuredTaskScope.java:647)",
+              "challenge.concurrency.Main.findPrivateECS(Main.java:100)",
+              "challenge.concurrency.Main.lambda$findECS$1(Main.java:69)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:422)",
+              "challenge.concurrency.Main.lambda$findECS$0(Main.java:69)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "30",
+           "name": "ecs-1",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.park(VirtualThread.java:746)",
+              "java.base\/java.lang.System$1.parkVirtualThread(System.java:2279)",
+              "java.base\/java.util.concurrent.locks.LockSupport.park(LockSupport.java:367)",
+              "java.base\/jdk.internal.misc.ThreadFlock.awaitAll(ThreadFlock.java:312)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.implJoin(StructuredTaskScope.java:618)",
+              "java.base\/java.util.concurrent.StructuredTaskScope.join(StructuredTaskScope.java:647)",
+              "challenge.concurrency.Main.findPublicECS(Main.java:137)",
+              "challenge.concurrency.Main.lambda$findECS$2(Main.java:74)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         }
+        ],
+        "threadCount": "2"
+      },
+      {
+        "container": "PrivateECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@7db1737b",
+        "parent": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@2346f1dd",
+        "owner": "28",
+        "threads": [
+         {
+           "tid": "33",
+           "name": "privateECS-0",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PrivateECSLocator.greenEnergyLocator(PrivateECSLocator.java:22)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$1(Main.java:93)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "36",
+           "name": "privateECS-1",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PrivateECSLocator.carElectricLocator(PrivateECSLocator.java:51)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$3(Main.java:96)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:422)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$2(Main.java:96)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "40",
+           "name": "privateECS-2",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PrivateECSLocator.electricChargeLocator(PrivateECSLocator.java:86)",
+              "challenge.concurrency.Main.lambda$findPrivateECS$4(Main.java:98)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         }
+        ],
+        "threadCount": "3"
+      },
+      {
+        "container": "PublicECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@17c7faa7",
+        "parent": "ECSScope\/jdk.internal.misc.ThreadFlock$ThreadContainerImpl@2346f1dd",
+        "owner": "30",
+        "threads": [
+         {
+           "tid": "34",
+           "name": "publicECS-0",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PublicECSLocator.ecsMotelsLocator(PublicECSLocator.java:88)",
+              "challenge.concurrency.Main.lambda$findPublicECS$1(Main.java:130)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "38",
+           "name": "publicECS-1",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PublicECSLocator.ecsHighwayLocator(PublicECSLocator.java:26)",
+              "challenge.concurrency.Main.lambda$findPublicECS$3(Main.java:132)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:422)",
+              "challenge.concurrency.Main.lambda$findPublicECS$2(Main.java:132)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "42",
+           "name": "publicECS-2",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PublicECSLocator.ecsMallParkingLocator(PublicECSLocator.java:59)",
+              "challenge.concurrency.Main.lambda$findPublicECS$4(Main.java:133)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         },
+         {
+           "tid": "43",
+           "name": "publicECS-3",
+           "stack": [
+              "java.base\/java.lang.VirtualThread.parkNanos(VirtualThread.java:788)",
+              "java.base\/java.lang.VirtualThread.sleepNanos(VirtualThread.java:967)",
+              "java.base\/java.lang.Thread.sleepNanos(Thread.java:480)",
+              "java.base\/java.lang.Thread.sleep(Thread.java:513)",
+              "challenge.concurrency.PublicECSLocator.ecsDriveInLocator(PublicECSLocator.java:119)",
+              "challenge.concurrency.Main.lambda$findPublicECS$6(Main.java:135)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.callWithoutScope(ScopedValueContainer.java:162)",
+              "java.base\/jdk.internal.vm.ScopedValueContainer.call(ScopedValueContainer.java:147)",
+              "java.base\/java.lang.ScopedValue$Carrier.call(ScopedValue.java:422)",
+              "challenge.concurrency.Main.lambda$findPublicECS$5(Main.java:135)",
+              "java.base\/java.util.concurrent.StructuredTaskScope$SubtaskImpl.run(StructuredTaskScope.java:879)",
+              "java.base\/java.lang.VirtualThread.run(VirtualThread.java:466)"
+           ]
+         }
+        ],
+        "threadCount": "4"
+      }
+    ]
+  }
+}
