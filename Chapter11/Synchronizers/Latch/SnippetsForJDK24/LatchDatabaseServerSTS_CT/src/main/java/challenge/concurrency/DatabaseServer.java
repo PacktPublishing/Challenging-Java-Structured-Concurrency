@@ -35,6 +35,6 @@ public class DatabaseServer {
          long endTime = System.nanoTime();
 
             logger.info(() -> "Database server started in "
-                    + TimeUnit.NANOSECONDS.toSeconds(endTime - startTime) + " seconds");
+                    + TimeUnit.NANOSECONDS.toSeconds(endTime - startTime) + "s");
     }
 }

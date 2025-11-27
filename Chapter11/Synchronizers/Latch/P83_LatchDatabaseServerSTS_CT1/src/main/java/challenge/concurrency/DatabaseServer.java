@@ -17,11 +17,11 @@ public class DatabaseServer {
 
         long startTime = System.nanoTime();
 
-        try (var scope = StructuredTaskScope.open(Joiner.<String>awaitAll())) {
+        try (var scope = StructuredTaskScope.open(Joiner.<Void>awaitAll())) {
                         
-            Subtask<String> s1 = scope.fork(() -> { new DatabaseProcess("Database Listeners").startProcess(); return "";});
-            Subtask<String> s2 = scope.fork(() -> { new DatabaseProcess("Database Connection Pool").startProcess(); return "";});
-            Subtask<String> s3 = scope.fork(() -> { new DatabaseProcess("Database Disk Space").startProcess(); return "";});
+            Subtask s1 = scope.fork(() -> new DatabaseProcess("Database Listeners").startProcess());
+            Subtask s2 = scope.fork(() -> new DatabaseProcess("Database Connection Pool").startProcess());
+            Subtask s3 = scope.fork(() -> new DatabaseProcess("Database Disk Space").startProcess());
             
             scope.join();        
             

@@ -1,7 +1,5 @@
 package challenge.concurrency;
 
-import java.util.concurrent.BrokenBarrierException;
-
 public class Main {   
 
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class Main {
         for (int i = 1; i <= 5; i++) { // 5 days     
             try {
                 wm.buildWeatherMap(i);
-            } catch (InterruptedException | BrokenBarrierException ex) {}
+            } catch (InterruptedException | WeatherException ex) {}
         }
     }
 }

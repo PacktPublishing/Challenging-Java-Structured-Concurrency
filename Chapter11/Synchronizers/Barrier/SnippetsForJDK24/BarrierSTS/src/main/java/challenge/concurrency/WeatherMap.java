@@ -1,6 +1,5 @@
 package challenge.concurrency;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.concurrent.StructuredTaskScope.Subtask;
 import static java.util.concurrent.StructuredTaskScope.Subtask.State.SUCCESS;
@@ -13,7 +12,7 @@ public class WeatherMap {
     private final Runnable weatherMap
             = () -> logger.info("Preparing the weather map based on temperatures, winds, and precipitations ...");
     
-    public void buildWeatherMap(int i) throws InterruptedException, BrokenBarrierException {
+    public void buildWeatherMap(int i) throws InterruptedException, WeatherException {
         
         logger.info(() -> "\nFetching weather map parameters for day " + i);
      
@@ -30,7 +29,8 @@ public class WeatherMap {
                 weatherMap.run();
             } else {
                 // barrier failed
-                throw new BrokenBarrierException();
+                // handle FAILED subtasks
+                throw new WeatherException();
             }
         }                                
     }

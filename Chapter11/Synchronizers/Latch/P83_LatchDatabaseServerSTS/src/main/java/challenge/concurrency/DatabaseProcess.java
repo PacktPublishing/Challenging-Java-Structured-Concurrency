@@ -22,7 +22,7 @@ public class DatabaseProcess {
             Thread.sleep(Duration.ofSeconds(startInAround));
 
             logger.info(() -> "Database process '"
-                    + process + "' started in " + startInAround + " seconds");           
+                    + process + "' started in " + startInAround + "s");           
 
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();           

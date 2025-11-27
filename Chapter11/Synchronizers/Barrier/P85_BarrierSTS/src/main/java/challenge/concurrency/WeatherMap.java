@@ -1,6 +1,5 @@
 package challenge.concurrency;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.concurrent.StructuredTaskScope.Joiner;
 import java.util.concurrent.StructuredTaskScope.Subtask;
@@ -14,15 +13,15 @@ public class WeatherMap {
     private final Runnable weatherMap
             = () -> logger.info("Preparing the weather map based on temperatures, winds, and precipitations ...");
     
-    public void buildWeatherMap(int i) throws InterruptedException, BrokenBarrierException {
+    public void buildWeatherMap(int i) throws InterruptedException, WeatherException {
         
         logger.info(() -> "\nFetching weather map parameters for day " + i);
      
-        try (var scope = StructuredTaskScope.open(Joiner.<String>awaitAll())) {
+        try (var scope = StructuredTaskScope.open(Joiner.<Void>awaitAll())) {
                         
-            Subtask<String> s1 = scope.fork(() -> { new WeatherParameters("Temperatures").fetchParameter(); return""; });
-            Subtask<String> s2 = scope.fork(() -> { new WeatherParameters("Winds").fetchParameter(); return ""; });
-            Subtask<String> s3 = scope.fork(() -> { new WeatherParameters("Precipitations").fetchParameter(); return ""; });
+            Subtask s1 = scope.fork(() -> new WeatherParameters("Temperatures").fetchParameter());
+            Subtask s2 = scope.fork(() -> new WeatherParameters("Winds").fetchParameter());
+            Subtask s3 = scope.fork(() -> new WeatherParameters("Precipitations").fetchParameter());
             
             scope.join();    
             
@@ -31,7 +30,8 @@ public class WeatherMap {
                 weatherMap.run();
             } else {
                 // barrier failed
-                throw new BrokenBarrierException();
+                // handle FAILED subtasks
+                throw new WeatherException();
             }
         }                                
     }
