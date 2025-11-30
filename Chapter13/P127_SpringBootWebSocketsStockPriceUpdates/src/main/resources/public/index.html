@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Stocks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            const socket = new WebSocket('ws://localhost:8080/stockHandler');
+
+            socket.onmessage = (event) => {
+                const stock = JSON.parse(event.data);                
+                console.log(`{"symbol":${stock.symbol},"price":${stock.price},"timestamp":${stock.timestamp}}`);
+            };
+
+            socket.onopen = () => {
+                socket.send('send'); // Subscribe to web socket
+            };
+
+            socket.onerror = (event) => {
+                console.log('Error occurred');
+            };
+
+            socket.onclose = () => {
+                console.log('Connection closed');
+            };
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
