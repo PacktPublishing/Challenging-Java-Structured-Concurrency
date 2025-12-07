@@ -13,7 +13,7 @@ public class WeatherTaskScope implements StructuredTaskScope.Joiner<Double, Doub
     private final List<Double> temperatures = new CopyOnWriteArrayList<>();
 
     @Override
-    public boolean onComplete(StructuredTaskScope.Subtask<? extends Double> subtask) {
+    public boolean onComplete(StructuredTaskScope.Subtask<Double> subtask) {
 
         switch (subtask.state()) {
             case SUCCESS ->

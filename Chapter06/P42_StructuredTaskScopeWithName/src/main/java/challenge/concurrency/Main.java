@@ -22,7 +22,7 @@ public class Main {
                     + " is cancelled ? " + scope.isCancelled());
         }
 
-        try (var scope = open(Joiner.<Void>anySuccessfulResultOrThrow(),
+        try (var scope = open(Joiner.<Void>anySuccessfulOrThrow(),
                 cf -> cf.withName("innerScope"))) {
             
             // scope subtasks

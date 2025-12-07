@@ -16,7 +16,7 @@ public class ChargeFinderScope
     private volatile TimeoutException timeoutException;
 
     @Override
-    public boolean onComplete(StructuredTaskScope.Subtask<? extends Charger> subtask) {
+    public boolean onComplete(StructuredTaskScope.Subtask<Charger> subtask) {
 
         switch (subtask.state()) {
             case SUCCESS -> {

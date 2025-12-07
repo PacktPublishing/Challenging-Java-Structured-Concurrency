@@ -25,8 +25,8 @@ public class Main {
 
     public static Menu orderCateringMenu(Duration timeout) throws InterruptedException {
 
-        // StructuredTaskScope<Object, Object>
-        try (var scope = StructuredTaskScope.open(Joiner.<Object>allSuccessfulOrThrow(), 
+        // StructuredTaskScope<Object, Void>
+        try (var scope = StructuredTaskScope.open(Joiner.awaitAllSuccessfulOrThrow(), 
                 cf -> cf.withTimeout(timeout))) {
 
             Subtask<Starter> starterSubtask = scope.fork(() -> Starters.orderStarter());

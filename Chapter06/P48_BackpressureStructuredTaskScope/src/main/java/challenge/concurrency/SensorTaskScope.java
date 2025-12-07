@@ -10,7 +10,7 @@ public class SensorTaskScope extends BackpressureTaskScope<String, List<String>>
     private final List<Throwable> exceptions = new CopyOnWriteArrayList<>();
     
     @Override
-    public boolean onComplete(StructuredTaskScope.Subtask<? extends String> subtask) {
+    public boolean onComplete(StructuredTaskScope.Subtask<String> subtask) {
         
         switch (subtask.state()) {
             case SUCCESS -> 

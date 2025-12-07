@@ -17,7 +17,7 @@ public class PublicChargeFinderScope
     private final List<Throwable> ecsExceptions = new CopyOnWriteArrayList<>();
 
     @Override
-    public boolean onComplete(StructuredTaskScope.Subtask<? extends List<PublicECS>> subtask) {
+    public boolean onComplete(StructuredTaskScope.Subtask<List<PublicECS>> subtask) {
 
         switch (subtask.state()) {
             case SUCCESS -> {

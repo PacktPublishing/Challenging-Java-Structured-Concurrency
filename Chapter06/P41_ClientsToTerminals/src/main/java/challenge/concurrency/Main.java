@@ -52,7 +52,7 @@ public class Main {
 
     private static void connectToTerminal(Client client) {
 
-        try (var scope = open(Joiner.<Void>anySuccessfulResultOrThrow())) {
+        try (var scope = open(Joiner.<Void>anySuccessfulOrThrow())) {
 
             scope.fork(() -> firstTerminal(client));
             scope.fork(() -> secondTerminal(client));

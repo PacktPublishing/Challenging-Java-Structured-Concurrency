@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.concurrent.StructuredTaskScope.FailedException;
 import java.util.concurrent.StructuredTaskScope.Joiner;
 import static java.util.concurrent.StructuredTaskScope.open;
-import java.util.function.Supplier;
 import java.util.logging.Logger;
-import static java.util.stream.Collectors.toList;
 
 public class Main {
 
@@ -35,13 +33,13 @@ public class Main {
                 scope.fork(() -> connectToTerminal(client));
             }
 
-            return scope.join().map(Supplier::get).collect(toList());
+            return scope.join();
         }
     }
 
     private static Connection connectToTerminal(Client client) {
 
-        try (var scope = open(Joiner.<Connection>anySuccessfulResultOrThrow())) {
+        try (var scope = open(Joiner.<Connection>anySuccessfulOrThrow())) {
 
             scope.fork(() -> firstTerminal(client));
             scope.fork(() -> secondTerminal(client));

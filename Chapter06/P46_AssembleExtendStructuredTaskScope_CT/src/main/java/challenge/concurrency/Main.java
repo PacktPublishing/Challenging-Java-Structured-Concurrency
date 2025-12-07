@@ -45,7 +45,7 @@ public class Main {
                 
             Subtask<PrivateECS> privateEcsSubtask = null;
             Subtask<PublicECS> publicEcsSubtask = null;
-            try (var scope = StructuredTaskScope.open(Joiner.<Charger>anySuccessfulResultOrThrow())) {
+            try (var scope = StructuredTaskScope.open(Joiner.<Charger>anySuccessfulOrThrow())) {
 
                 privateEcsSubtask = scope.fork(() -> findPrivateECS(currentLocation));
                 publicEcsSubtask = scope.fork(() -> findPublicECS(currentLocation));

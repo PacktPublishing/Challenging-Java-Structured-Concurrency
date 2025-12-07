@@ -12,7 +12,7 @@ public class BackpressureTaskScope<T, R> implements StructuredTaskScope.Joiner<T
     private static final AtomicInteger forked = new AtomicInteger(0);
 
     @Override
-    public boolean onFork(StructuredTaskScope.Subtask<? extends T> subtask) {
+    public boolean onFork(StructuredTaskScope.Subtask<T> subtask) {
 
         if (forked.get() >= backpressure) {
 
@@ -26,7 +26,7 @@ public class BackpressureTaskScope<T, R> implements StructuredTaskScope.Joiner<T
     }
 
     @Override
-    public boolean onComplete(StructuredTaskScope.Subtask<? extends T> subtask) {
+    public boolean onComplete(StructuredTaskScope.Subtask<T> subtask) {
 
         forked.getAndDecrement();
         

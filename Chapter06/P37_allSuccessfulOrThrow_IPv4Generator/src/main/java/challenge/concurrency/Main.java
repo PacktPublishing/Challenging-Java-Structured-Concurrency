@@ -1,14 +1,12 @@
 package challenge.concurrency;
 
+import java.util.List;
 import java.util.concurrent.StructuredTaskScope.Joiner;
-import java.util.concurrent.StructuredTaskScope.Subtask;
 import static java.util.concurrent.StructuredTaskScope.open;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Supplier;
 import java.util.logging.Logger;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.mapping;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -26,7 +24,7 @@ public class Main {
 
     public static String ipv4Generator() throws InterruptedException {
         
-        // StructuredTaskScope<Integer,  Stream<Subtask<Integer>>>
+        // StructuredTaskScope<Integer,  List<Integer>>
         try (var scope = open(Joiner.<Integer>allSuccessfulOrThrow())) {
 
             scope.fork(() -> ipv4Octet1());
@@ -34,11 +32,10 @@ public class Main {
             scope.fork(() -> ipv4Octet3());
             scope.fork(() -> ipv4Octet4());
 
-            Stream<Subtask<Integer>> subtasks = scope.join(); // Join subtasks, propagating exceptions
+            List<Integer> results = scope.join(); // Join subtasks, propagating exceptions
 
             // All subtasks have succeeded, so compose their results
-            String ipv4Result = subtasks
-                    .map(Supplier::get)
+            String ipv4Result = results.stream()
                     .collect(mapping(String::valueOf, joining(".")));
 
             return ipv4Result;
