@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# Creating virtual threads via a thread factory
+Exemplify the creation of virtual (and platform) threads via a thread factory.
