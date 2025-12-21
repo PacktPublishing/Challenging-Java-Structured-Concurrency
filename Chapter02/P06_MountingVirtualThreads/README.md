@@ -1,0 +1,2 @@
+# Hooking virtual threads ForkJoinPool
+Dissect the parameters of the ForkJoinPool implementation used by virtual threads. In addition, write an application that mounts a number of virtual threads equal to the number of available CPU cores + 1.

@@ -14,7 +14,10 @@ public class Main {
                 "[%1$tT] [%4$-7s] %5$s %n");
 
         // This is the task (job) executed by the virtual threads
-        Runnable voidTask = () -> logger.info(Thread.currentThread().toString());
+        Runnable voidTask = () -> {
+            try { Thread.sleep(1); } catch (InterruptedException ex) {}
+            logger.info(Thread.currentThread().toString());            
+        };
                         
         for (int i = 0; i < NUMBER_OF_PROCESSORS + 1; i++) {
             Thread.startVirtualThread(voidTask);
