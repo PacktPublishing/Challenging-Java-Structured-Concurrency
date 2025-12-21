@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# Setting the properties of virtual threads
+Write several examples for setting the properties of a virtual thread: name, priority, daemon status, thread group, and the uncaught exception handler.
