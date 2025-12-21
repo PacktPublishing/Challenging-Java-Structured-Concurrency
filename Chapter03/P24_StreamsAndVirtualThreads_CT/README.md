@@ -1,2 +1,3 @@
-# Combining newVirtualThreadPerTaskExecutor() and streams:
-Write several examples that introduce how Java stream pipelines can be combined with the newVirtualThreadPerTaskExecutor() executor.
+# Challenge time 
+Based on the previous example, come up with some examples that collect only the `Future`
+instances that have completed exceptionally.
