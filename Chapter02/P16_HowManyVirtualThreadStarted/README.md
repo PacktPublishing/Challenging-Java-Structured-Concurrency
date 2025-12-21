@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# How many virtual threads can be started?
+Provide an application for starting as many (blank) virtual threads as possible. 

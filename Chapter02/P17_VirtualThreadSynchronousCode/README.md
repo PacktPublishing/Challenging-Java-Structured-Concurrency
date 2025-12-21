@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Virtual threads and synchronous code
+Write a snippet of code that reveals how virtual threads and synchronous code work (for instance, use the built-in SynchronousQueue). 

@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# Interpreting the toString() output for a virtual thread
+Write several snippets of code for printing/logging virtual threads in different states (via the toString() method).
