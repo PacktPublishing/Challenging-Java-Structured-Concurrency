@@ -1,2 +1,3 @@
-# Exemplifying thread context switching:
-Write several examples that show how thread context switching works for virtual threads.
+# Challenge time 
+Based on the previous code (example 2), modify the `oneSleepTask` code in such a way that 
+both tasks will be blocked forever (hang on forever). 

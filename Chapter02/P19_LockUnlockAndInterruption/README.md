@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Interrupting a (virtual) thread
+Provide a deep dissertation joined by carefully crafted examples about interrupting a Java thread (virtual and platform).

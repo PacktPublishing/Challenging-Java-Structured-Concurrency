@@ -1,2 +1,2 @@
-# Exemplifying thread context switching:
-Write several examples that show how thread context switching works for virtual threads.
+# Hooking virtual thread’s context-switching
+Present two examples that illustrate the context switching behavior of virtual threads. 

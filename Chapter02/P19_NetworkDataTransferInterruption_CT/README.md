@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge Time 
+Challenge yourself to implement a scenario that simulates the interruption of a 
+network data transfer.
