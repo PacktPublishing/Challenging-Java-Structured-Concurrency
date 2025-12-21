@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# Wait until a virtual thread finishes
+Provide a detailed explanation with examples of using the join() method for platform and virtual threads.

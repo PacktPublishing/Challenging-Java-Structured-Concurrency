@@ -1,2 +1,2 @@
-# Introducing virtual threads:
-Explain and exemplify the main concepts of virtual threads.
+# Challenge time 
+Challenge yourself to simulate a thread state for a platform thread.

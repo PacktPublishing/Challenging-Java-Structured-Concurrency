@@ -17,8 +17,6 @@ public class Main {
                 
         Thread platformThread = Thread.ofPlatform().unstarted(voidTask);
                    
-        platformThread.start();       
-        
-        System.out.println(Thread.currentThread().isDaemon());
+        platformThread.start();               
     }
 }
