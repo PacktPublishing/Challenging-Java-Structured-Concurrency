@@ -41,8 +41,7 @@ public class Main {
             for (int i = 0; i < TASK_NR; i++) {
 
                 executor.submit(voidTask);
-                // Future<?> future = executor.submit(voidTask);
-                
+                // Future<?> future = executor.submit(voidTask);                
             }
         }
 

@@ -37,9 +37,9 @@ public class Main {
 
     private static void cpuBoundTask() {         
         logger.info(() -> "1: " + Thread.currentThread().toString());
-        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Compute matrix ----> ");
+        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Generate PI digits ----> ");
         genPIDigits(200000); // for 100000 and virtual threads, some workers can be reused
-        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Matrix computed <----");
+        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : PI digits generated <----");
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -53,7 +53,7 @@ public class Main {
             int ci = i;           
             vts[i] = Thread.ofPlatform().start(() -> { // switch to ofVirtual() and interpret the results
                 cpuBoundTask();
-                logger.info(() -> "Task time ioBoundTask (s): " 
+                logger.info(() -> "Task time cpuBoundTask (s): " 
                         + TimeUnit.NANOSECONDS.toSeconds((
                                 System.nanoTime() - startTime - TimeUnit.SECONDS.toNanos(ci))));                
             });                        

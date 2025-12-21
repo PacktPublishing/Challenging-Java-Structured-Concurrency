@@ -35,18 +35,18 @@ public class Main {
         return sbpi.toString();
     }
    
-    private static void mainIoBoundTask() { // 1
+    private static void mainCpuBoundTask() { // 1
         logger.info(() -> "1: " + Thread.currentThread().toString());
-        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Compute matrix ----> ");  
+        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Generate PI digits ----> ");  
         genPIDigits(100000);
-        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : Matrix computed <----");
+        logger.info(() -> "1 [#" + Thread.currentThread().threadId() + "] : PI digits generated <----");
     }
 
-    private static void otherIoBoundTask() { // 2
+    private static void otherCpuBoundTask() { // 2
         logger.info(() -> "2: " + Thread.currentThread().toString());
-        logger.info(() -> "2 [#" + Thread.currentThread().threadId() + "] : Format input data ----> ");  
+        logger.info(() -> "2 [#" + Thread.currentThread().threadId() + "] : Generate more PI digits ----> ");  
         genPIDigits(125000);
-        logger.info(() -> "2 [#" + Thread.currentThread().threadId() + "] : Input data format done <----");
+        logger.info(() -> "2 [#" + Thread.currentThread().threadId() + "] : More PI digits generated <----");
     }
 
     public static void main(String[] args) {
@@ -57,13 +57,13 @@ public class Main {
         long startTime = System.nanoTime();
         try (ExecutorService executor = Executors.newFixedThreadPool(1)) {
             executor.submit(() -> {
-                mainIoBoundTask();
-                logger.info(() -> "Task time mainIoBoundTask (s): "
+                mainCpuBoundTask();
+                logger.info(() -> "Task time mainCpuBoundTask (s): "
                         + TimeUnit.NANOSECONDS.toSeconds((System.nanoTime() - startTime)));
             });
             executor.submit(() -> {
-                otherIoBoundTask();
-                logger.info(() -> "Task time otherIoBoundTask (s): "
+                otherCpuBoundTask();
+                logger.info(() -> "Task time otherCpuBoundTask (s): "
                         + TimeUnit.NANOSECONDS.toSeconds((System.nanoTime() - startTime)));
             });
         }
