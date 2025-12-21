@@ -1,2 +1,2 @@
-# Using the ExecutorService for virtual threads:
-Write several examples that highlight the task-per-thread model via ExecutorService and virtual threads.
+# Virtual threads sustain I/O bound tasks (code)
+Provide several snippets of code to sustain the fact that virtual threads are suitable for I/O bound tasks, but don’t bring advantages for CPU-bound tasks.
