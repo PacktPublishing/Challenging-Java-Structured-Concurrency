@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge time 
+Try to use `CompletableFuture.allOf()` to run our three tasks and get the results. 
