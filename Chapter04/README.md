@@ -1,2 +1,2 @@
-# Challenging-Java-Structured-Concurrency
-Challenging Java Structured Concurrency, published by Packt
+# Hooking continuations 
+Provide a brief description of continuations and coroutines concepts.
