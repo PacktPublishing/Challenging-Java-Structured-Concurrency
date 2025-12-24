@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# anySuccessfulOrThrow() – at least one subtask completes successfully or throw if all fails
+Explain and exemplify the usage of the `anySuccessfulOrThrow()` joiner.
