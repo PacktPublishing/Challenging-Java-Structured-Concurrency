@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Hooking Subtask states
+Provide a brief description and examples of the `Subtask.State` enum.

@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Introducing StructuredTaskScope
+Introduce the `StructuredTaskScope` API, its terminology, and a meaningful example. 
+Additionally, provide a brief comparison of `StructuredTaskScope` and `ExecutorService`.

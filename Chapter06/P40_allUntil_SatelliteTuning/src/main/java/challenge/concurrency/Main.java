@@ -9,19 +9,18 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 
 public class Main {
 
     private static final Logger logger = Logger.getLogger(Main.class.getName());
     
     private static class SatelliteTuningFailures<String> 
-            implements Predicate<Subtask<? extends String>> {
+            implements Predicate<Subtask<String>> {
         
         private final AtomicInteger frequencyFailedCount = new AtomicInteger();
         
         @Override
-        public boolean test(Subtask<? extends String> subtask) {
+        public boolean test(Subtask<String> subtask) {
                                 
             return subtask.state() == Subtask.State.FAILED
                     && frequencyFailedCount.incrementAndGet() >= 2;
@@ -47,13 +46,11 @@ public class Main {
             scope.fork(() -> satelliteFrequency1218GHz());
             scope.fork(() -> satelliteFrequency2432GHz());
 
-            Stream<Subtask<String>> results = scope.join(); // Join subtasks, no exceptions are propagated                                        
-                
-            List<Subtask<String>> resultsList = results.toList();
-            
-            resultsList.forEach(r -> logger.info(r.state().toString()));
+            List<Subtask<String>> results = scope.join(); // Join subtasks, no exceptions are propagated                                        
+                            
+            results.forEach(r -> logger.info(r.state().toString()));
                         
-            return resultsList.stream()
+            return results.stream()
                     .filter(r -> r.state() == SUCCESS)
                     .map(r -> r.get())
                     .toList();                                
