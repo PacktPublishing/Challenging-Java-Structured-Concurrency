@@ -1,2 +1,2 @@
-# Using the ExecutorService for virtual threads:
-Write several examples that highlight the task-per-thread model via ExecutorService and virtual threads.
+# StructuredTaskScope and streams
+`StructuredTaskScope` and streams are making a great team. Write several snippets of code to sustain this statement.

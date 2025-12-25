@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Extending StructuredTaskScope
+Beside the built-in joiners and `allUntil()`, we can implement our custom policies by implementing the `StructuredTaskScope.Joiner`
+ interface and overriding the needed methods (`onComplete()`, `result()`, and so on). Provide an example of extending the `StructuredTaskScope`.
