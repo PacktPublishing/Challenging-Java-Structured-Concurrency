@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# awaitAll() – all subtasks complete successfully or exceptionally, no cancellations
+Explain and exemplify the usage of the `awaitAll()` joiner.
