@@ -1,2 +1,2 @@
-# Using the ExecutorService for virtual threads:
-Write several examples that highlight the task-per-thread model via ExecutorService and virtual threads.
+# Carrier is immutable and thread-safe
+When we call the `where()` method, we get back an immutable and thread-safe `Carrier` object that doesn’t mutate an existing mapping. Exemplify this in code.
