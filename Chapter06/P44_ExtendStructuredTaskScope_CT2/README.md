@@ -1,2 +1,4 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge Time
+Let’s suppose that we have to concurrently read the temperature from 10 
+weather stations and return the average temperature. Implement this scenario via a custom 
+`StructuredTaskScope`. 
