@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Enriching StructuredTaskScope with ScopedValue
+Reiterate the ECSFinder problem from Chapter 6 to add more features using the ScopedValue API.
