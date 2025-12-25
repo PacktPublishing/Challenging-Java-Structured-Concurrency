@@ -1,2 +1,2 @@
-# Hooking ScopedValue and virtual threads:
-Provide a comprehensive introduction with examples of the ScopedValue API.
+# Introducing ScopedValue
+Write several snippets of code meant to introduce scoped values.
