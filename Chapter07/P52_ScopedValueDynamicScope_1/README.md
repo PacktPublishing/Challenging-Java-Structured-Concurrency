@@ -1,2 +1,2 @@
-# Using ScopedValue and executor services:
-Write a snippet of code that emphasizes the usage of ScopedValue API in the context of executor services.
+# ScopedValue (nested) dynamic scopes
+Provide a bunch of examples meant to reveal how scoped values can be nested to define dynamic scopes.
