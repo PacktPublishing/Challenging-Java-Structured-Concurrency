@@ -1,2 +1,2 @@
-# Using the ExecutorService for virtual threads:
-Write several examples that highlight the task-per-thread model via ExecutorService and virtual threads.
+# Migrating the "transaction id" app to ScopedValue
+Write a code that migrate the "transaction id" application from `ThreadLocal` to `ScopedValue`.
