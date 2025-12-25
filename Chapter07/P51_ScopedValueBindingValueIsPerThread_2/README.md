@@ -1,2 +1,2 @@
-# Using ScopedValue and executor services:
-Write a snippet of code that emphasizes the usage of ScopedValue API in the context of executor services.
+# ScopedValue binding to a value is per-thread
+A `ScopedValue` binding to a value is per-thread. Explain this statement with examples.
