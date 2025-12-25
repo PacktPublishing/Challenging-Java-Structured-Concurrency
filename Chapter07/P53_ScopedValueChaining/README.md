@@ -1,2 +1,2 @@
-# Using ScopedValue and executor services:
-Write a snippet of code that emphasizes the usage of ScopedValue API in the context of executor services.
+# ScopedValue chaining and rebinding
+Chaining and rebinding are two techniques that enhance the flexibility of `ScopeValue` usage. Explain and exemplify these techniques.
