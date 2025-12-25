@@ -7,8 +7,9 @@
     <packaging>jar</packaging>
     <properties> 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>        
+        <maven.compiler.source>26</maven.compiler.source>
+        <maven.compiler.target>26</maven.compiler.target> 
+        <oracle.version>23.26.0.0.0</oracle.version>       
     </properties>
     <name>P56_ScopedValueDbConnection</name>  
     
@@ -16,7 +17,7 @@
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc11</artifactId>
-            <version>23.26.0.0.0</version>
+            <version>${oracle.version}</version>
         </dependency>
     </dependencies>  
 </project>
