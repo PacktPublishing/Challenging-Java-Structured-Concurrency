@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Overriding onFork()/onTimeout()
+Sometimes, we need a custom joiner that overrides `onFork()` and/or `onTimeout()`. Exemplify this statement via two meaningful examples.
