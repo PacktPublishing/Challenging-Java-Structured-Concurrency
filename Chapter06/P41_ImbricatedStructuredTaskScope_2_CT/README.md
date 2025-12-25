@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge Time 
+Modify the previous example to allow the `fastSubtask` to complete successfully even if `slowScope` is closed.

@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# allUntil(Predicate) – all subtasks complete or the given predicate returns true
+Explain and exemplify the usage of the allUntil() joiner.

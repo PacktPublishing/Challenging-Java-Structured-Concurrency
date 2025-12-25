@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Nesting scopes
+Provide two examples of nesting two `StructuredTaskScope`. First, nest them at the code level (imbricate them while they hierarchically remain on the same level, which means both of them have the same task scope owner). Second, nest them hierarchically; they will have different task scope owners. In both cases, explain the output.

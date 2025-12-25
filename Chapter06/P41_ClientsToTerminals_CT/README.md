@@ -1,2 +1,10 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge Time 
+Let’s reshape the previous scenario based on the following model: 
+
+record Connection(String token) {} 
+record Client(String id) {} 
+ 
+List<Client> clients = List.of( 
+  new Client("C1"), new Client("C2"), new Client("C3"),  
+  new Client("C4"), new Client("C5") 
+); 
