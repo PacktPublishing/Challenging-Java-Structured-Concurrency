@@ -62,7 +62,9 @@ public class Main {
                 if (privateSuppressed != null) {
                     logger.severe(Arrays.toString(privateSuppressed.getSuppressed()));
                 }
-
+            }
+            
+            if (e.getSuppressed().length > 1) {
                 Throwable publicSuppressed = e.getSuppressed()[1];
                 if (publicSuppressed != null) {
                     logger.severe(Arrays.toString(publicSuppressed.getSuppressed()));

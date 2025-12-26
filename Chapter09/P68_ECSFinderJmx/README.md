@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Hooking JDK 21 `dumpThreads()`
+JDK 21 has added in `HotSpotDiagnosticMXBean` the `dumpThreads(String outputFile, HotSpotDiagnosticMXBean.ThreadDumpFormat format)` method. 
+This method produces a thread dump in the specified output file and format. Exemplify its usage.
