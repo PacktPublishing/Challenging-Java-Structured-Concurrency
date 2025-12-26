@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Branching control flow of a promise
+Explain and exemplify the branching 
+control flow of a promise via Java `CompletableFuture`. 
