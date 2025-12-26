@@ -19,7 +19,7 @@
                 <version>${mavem.compiler.plugin.version}</version>
                 <configuration>
                     <compilerArgs>
-                        <arg>--enable-preview</arg>                            
+                        <arg>--enable-preview</arg>                             
                     </compilerArgs>                    
                 </configuration>
             </plugin>
