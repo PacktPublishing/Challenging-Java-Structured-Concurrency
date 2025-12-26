@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Tackling `Future` streaming flow pattern
+Implement a streaming pipeline that fetches in real-time the scores from some tennis courts and football stadiums via `Future`. 
