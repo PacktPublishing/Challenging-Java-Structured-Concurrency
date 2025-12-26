@@ -1,2 +1,4 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Future repeatedly executing a task without setting a result pattern
+Implement a program that relies on `Future` to repeatedly execute a task without 
+setting a result. However, set a final result (a notification message) that should 
+be returned after the task completes. 
