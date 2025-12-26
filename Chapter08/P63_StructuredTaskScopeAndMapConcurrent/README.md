@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Using `mapConcurrent()` instead of structured concurrency?!
+In Chapter 6, we have solved the /Services/ application via `StructuredTaskScope`. Next, rewrite it via `mapConcurrent()`.
