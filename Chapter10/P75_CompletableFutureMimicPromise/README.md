@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Accepting/rejecting a promise
+Write a snippet of code that relies on Java `CompletableFuture` to mimic the behavior of accepting/rejecting a promise.
