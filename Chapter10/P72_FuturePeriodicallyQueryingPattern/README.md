@@ -1,2 +1,3 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Hooking `Future` periodically querying pattern
+Provide a snippet of code that periodically queries a service via `Future` (for instance, ping a web service). By 
+"periodically querying" consider a variable interval of time between queries – so, not a fixed rate. 
