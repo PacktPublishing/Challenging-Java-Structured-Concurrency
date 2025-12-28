@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Create a custom thread pool
+Write a custom thread pool that extends the existing `ThreadPoolExecutor` to solve a certain scenario.
