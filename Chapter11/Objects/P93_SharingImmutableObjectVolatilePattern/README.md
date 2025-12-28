@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Sharing immutable objects – volatile pattern
+Exemplify the usage of the _volatile pattern_ for sharing immutable objects.
