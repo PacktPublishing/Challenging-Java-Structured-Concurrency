@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Introducing thread pools design pattern
+Explain how a _thread pool_ works in Java and write a snippet of code representing a simple `Executor` implementation.
