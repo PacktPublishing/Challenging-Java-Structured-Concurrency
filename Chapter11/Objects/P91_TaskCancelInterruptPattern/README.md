@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Task cancel – interrupt pattern
+A _Cancel_ feature for long-running tasks is a common feature in graphical user interfaces (GUIs). Use the _interrupt pattern_ to implement this feature.
