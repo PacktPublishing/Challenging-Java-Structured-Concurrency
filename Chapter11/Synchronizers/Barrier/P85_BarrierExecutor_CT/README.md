@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Challenge Time 
+Based on the logic of the previous example, implement a simulation of `CyclicBarrier` via `newVirtualThreadPerTaskExecutor()`. 

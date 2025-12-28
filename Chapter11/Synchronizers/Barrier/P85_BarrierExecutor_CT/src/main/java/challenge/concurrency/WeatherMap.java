@@ -25,7 +25,7 @@ public class WeatherMap {
             f3 = executor.submit(() -> new WeatherParameters("Precipitations").fetchParameter());
         }
 
-        if (f1.state().equals(SUCCESS) && f1.state().equals(SUCCESS) && f1.state().equals(SUCCESS)) {
+        if (f1.state().equals(SUCCESS) && f2.state().equals(SUCCESS) && f3.state().equals(SUCCESS)) {
             // barrier success
             weatherMap.run();
         } else {
