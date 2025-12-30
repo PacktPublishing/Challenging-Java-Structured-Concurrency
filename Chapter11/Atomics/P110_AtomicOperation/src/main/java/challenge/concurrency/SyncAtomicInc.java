@@ -8,7 +8,7 @@ public class SyncAtomicInc {
         return counter++;
     }
 
-    public synchronized int getCounter() {
+    public int getCounter() {
         return counter;
     }
 
