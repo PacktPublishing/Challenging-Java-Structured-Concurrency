@@ -2,22 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>java.modern.challenge</groupId>
-    <artifactId>P110_ConveyorSingleThreadVolatileBenchmark</artifactId>
+    <artifactId>P112_ConveyorSingleThreadVolatileBenchmark</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <properties> 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>        
+        <maven.compiler.source>26</maven.compiler.source>
+        <maven.compiler.target>26</maven.compiler.target>  
+        <hdrhistogram.version>2.2.2</hdrhistogram.version>      
     </properties>
-    <name>P110_ConveyorSingleThreadVolatileBenchmark</name>  
+    <name>P112_ConveyorSingleThreadVolatileBenchmark</name>  
     
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hdrhistogram/HdrHistogram -->
         <dependency>
             <groupId>org.hdrhistogram</groupId>
             <artifactId>HdrHistogram</artifactId>
-            <version>2.2.2</version>
+            <version>${hdrhistogram.version}</version>
         </dependency>
     </dependencies>  
 </project>
