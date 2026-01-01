@@ -22,17 +22,17 @@ public class Main {
                     
                     try { Thread.sleep(3000); } catch (InterruptedException ex) {}
                     
-                    return"And the winner is: ";
+                    return "And the winner is: ";
                 });              
 
-        CompletableFuture<String> cf1 = cf.thenApply( 
+        CompletableFuture<String> cf1 = cf.thenApplyAsync( 
                 t -> {
                     logger.info(() -> "Thread CF-1: " + Thread.currentThread());
                     try { Thread.sleep((long) (Math.random() * 1000)); } catch (InterruptedException ex) {}                   
                     return t + " Mike";
                 });
 
-        CompletableFuture<String> cf2 = cf.thenApply( 
+        CompletableFuture<String> cf2 = cf.thenApplyAsync( 
                 t -> {
                     logger.info(() -> "Thread CF-2: " + Thread.currentThread());
                     try { Thread.sleep((long) (Math.random() * 1000)); } catch (InterruptedException ex) {}

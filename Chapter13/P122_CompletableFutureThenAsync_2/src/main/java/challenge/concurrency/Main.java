@@ -11,23 +11,42 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         System.setProperty("java.util.logging.SimpleFormatter.format",
-                "[%1$tT] [%4$-7s] %5$s %n");        
+                "[%1$tT] [%4$-7s] %5$s %n");
 
+        logger.info(() -> "Main thread: " + Thread.currentThread());
+        
         CompletableFuture<String> cf
-                = CompletableFuture.supplyAsync(() -> "Hello ")
-                        .thenApply(hello -> hello + " dear ")
-                        .thenApply(dear -> dear + " George");
+                = CompletableFuture.supplyAsync(() -> {
+                    
+                    logger.info(() -> "Thread CF: " + Thread.currentThread());
+                    
+                    try { Thread.sleep(3000); } catch (InterruptedException ex) {}
+                    
+                    return"And the winner is: ";
+                });              
 
-        String r1 = cf.get();
-        
-        CompletableFuture<String> cfa
-                = CompletableFuture.supplyAsync(() -> "Hello ")
-                        .thenApplyAsync(hello -> hello + " dear ")
-                        .thenApplyAsync(dear -> dear + " George");
+        CompletableFuture<String> cf1 = cf.thenApply( 
+                t -> {
+                    logger.info(() -> "Thread CF-1: " + Thread.currentThread());
+                    try { Thread.sleep((long) (Math.random() * 1000)); } catch (InterruptedException ex) {}                   
+                    return t + " Mike";
+                });
 
-        String r2 = cfa.get();
+        CompletableFuture<String> cf2 = cf.thenApply( 
+                t -> {
+                    logger.info(() -> "Thread CF-2: " + Thread.currentThread());
+                    try { Thread.sleep((long) (Math.random() * 1000)); } catch (InterruptedException ex) {}
+                    return t + " Kelly";
+                });
+
+        while (!cf1.isDone() && !cf2.isDone()) {}
+
+        if (cf1.isDone()) {
+            logger.info(() -> "CF-1: " + cf1.resultNow());
+        }
         
-        logger.info(() -> "R1: " + r1);
-        logger.info(() -> "R2: " + r2);
+        if (cf2.isDone()) {
+            logger.info(() -> "CF-2: " + cf2.resultNow());
+        }
     }
 }
