@@ -8,12 +8,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class MainApplication {
 
-   // private final DefaultThreadsProductService productService;
-
-  ////  public MainApplication(DefaultThreadsProductService productService) {
-  //      this.productService = productService;
-  //  }
-
     public static void main(String[] args) {
         
         System.setProperty("java.util.logging.SimpleFormatter.format",
@@ -24,10 +18,7 @@ public class MainApplication {
 
     @Bean
     public ApplicationRunner init() {
-        return args -> {
-
-            // test
-          //  productService.reportProductsByLine("Motorcycles");           
+        return args -> {        
         };
     }
 }

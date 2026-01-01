@@ -4,25 +4,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jpa</groupId>
-    <artifactId>P123_SpringBootCompletableFutureVirtualThreads</artifactId>
+    <artifactId>P124_SpringBootCompletableFutureVirtualThreads</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>P123_SpringBootCompletableFutureVirtualThreads</name>
+    <name>P124_SpringBootCompletableFutureVirtualThreads</name>
     <description>Async pipeline</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.4</version>
+        <version>4.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>24</java.version>
-        <maven.compiler.release>25</maven.compiler.release>
+        <java.version>26</java.version>
+        <maven.compiler.release>26</maven.compiler.release>
     </properties>
 
     <dependencies>        
