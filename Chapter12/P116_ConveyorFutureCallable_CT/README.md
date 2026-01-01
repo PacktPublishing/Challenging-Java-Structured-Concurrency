@@ -1,2 +1,6 @@
-# Solving the producer-consumer problem via virtual threads:
-Refactor the producer-consumer problem developed in Java Coding Problems, First Edition, Chapter 10, Problem 203 to use virtual threads. If you don’t have that book then just give your own idea and implementation or simply follow the code from https://github.com/PacktPublishing/Java-Coding-Problems/tree/master/Chapter10.
+# Challenge Time 
+In this challenge, let’s assume that the queue of batteries can accommodate only 
+10 batteries. If the workers process these batteries, then they have to wait for 
+the queue to fill up. Once it is filled up, the workers may continue to process 
+until the queue is depleted again. This scenario continues to repeat until the 
+conveyor is stopped.
