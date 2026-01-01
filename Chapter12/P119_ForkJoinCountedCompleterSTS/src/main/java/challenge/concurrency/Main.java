@@ -30,7 +30,7 @@ public class Main {
         logger.info(() -> "Array: " + Arrays.toString(ELEMENTS));
         logger.info(() -> "Search for: " + ELEMENT_TO_FIND);
 
-        try (var scope = StructuredTaskScope.open(Joiner.<Integer>anySuccessfulResultOrThrow())) {
+        try (var scope = StructuredTaskScope.open(Joiner.<Integer>anySuccessfulOrThrow())) {
 
             Subtask<Integer>[] subtasks = new StructuredTaskScope.Subtask[ELEMENTS.length];
 
@@ -50,6 +50,9 @@ public class Main {
     }
 
     static int find(int element, int index) {
+        
+        // simulate a potential I/O-bound task part
+        try { Thread.sleep((long) (Math.random() * 1000)); } catch (InterruptedException ex) {}
 
         if (element == ELEMENT_TO_FIND) {
             return index;
