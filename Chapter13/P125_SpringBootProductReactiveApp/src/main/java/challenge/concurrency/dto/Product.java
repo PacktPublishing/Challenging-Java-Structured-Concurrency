@@ -1,4 +1,4 @@
-package challenge.concurrency.vo;
+package challenge.concurrency.dto;
 
 import java.io.Serializable;
 import org.springframework.data.annotation.Id;

@@ -1,9 +1,6 @@
 package challenge.concurrency.util;
 
-import challenge.concurrency.vo.Product;
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import challenge.concurrency.dto.ProductDto;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -11,9 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import reactor.core.publisher.Flux;
+import tools.jackson.databind.ObjectMapper;
 
 public final class ProductJsonReport {
 
@@ -21,24 +17,23 @@ public final class ProductJsonReport {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static void generate(String line, Flux<Product> products) {
+    public static void generate(String line, Flux<ProductDto> products) {
 
-        Path reportPath = Paths.get("reports", "report_" 
+        Path reportPath = Paths.get("reports", "report_"
                 + line + "_" + System.nanoTime() + "_" + Math.random() + ".txt");
 
         try {
             Files.createDirectories(reportPath.getParent());
 
             ObjectMapper mapper = new ObjectMapper();
-            mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 
             products.collectList()
-                    .subscribe((List<Product> ps) -> {
+                    .subscribe((List<ProductDto> ps) -> {
                         try {
                             mapper.writeValue(Files.newBufferedWriter(reportPath, StandardCharsets.UTF_8,
                                     StandardOpenOption.CREATE, StandardOpenOption.WRITE), ps);
                         } catch (IOException ex) {} // notify further that reports are having issues        
-            });
+                    });
         } catch (IOException ex) {} // notify further that reports are having issues        
     }
 }
