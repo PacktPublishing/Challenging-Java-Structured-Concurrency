@@ -3,26 +3,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jpa</groupId>
-    <artifactId>P127_SpringBootWebSocketsStockPriceUpdates</artifactId>
+    <groupId>java.modern.challenge</groupId>
+    <artifactId>P128_SpringBootWebSocketsStockPriceUpdates</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>P127_SpringBootWebSocketsStockPriceUpdates</name>
+    <name>P128_SpringBootWebSocketsStockPriceUpdates</name>
     <description>Virtual Threads and Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.4</version>
+        <version>4.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>24</java.version>
-        <maven.compiler.release>25</maven.compiler.release>
+        <java.version>26</java.version>
+        <maven.compiler.release>26</maven.compiler.release>
     </properties>
 
     <dependencies>
