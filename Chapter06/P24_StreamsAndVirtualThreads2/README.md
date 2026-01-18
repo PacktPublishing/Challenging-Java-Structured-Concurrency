@@ -1,2 +1,3 @@
-# Streams and newVirtualThreadPerTaskExecutor()
-Java Streams are very well suited for processing concurrent results. Provide several examples that uses Java Streams and newVirtualThreadPerTaskExecutor().
+# Streams and `newVirtualThreadPerTaskExecutor()`
+Java Streams are very well suited for processing concurrent results.
+ Provide several examples that uses Java Streams and `newVirtualThreadPerTaskExecutor()`.

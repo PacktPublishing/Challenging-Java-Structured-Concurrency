@@ -1,4 +1,4 @@
-# Challenge time 
+# Challenge time  
 Consider that you have several I/O bound tasks equal to the number of available processors. 
 Next, execute all these tasks in a thread-per-request fashion with executors 
 (`newThreadPerTaskExecutor(defaultThreadFactory()`), and `newVirtualThreadPerTaskExecutor()`, 

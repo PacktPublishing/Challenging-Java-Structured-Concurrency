@@ -1,2 +1,3 @@
 # Virtual threads sustain I/O bound tasks (code)
-Provide several snippets of code to sustain the fact that virtual threads are suitable for I/O bound tasks, but don’t bring advantages for CPU-bound tasks.
+Provide several snippets of code to sustain the fact that virtual threads are suitable for I/O bound tasks,
+ but don’t bring advantages for CPU-bound tasks.
