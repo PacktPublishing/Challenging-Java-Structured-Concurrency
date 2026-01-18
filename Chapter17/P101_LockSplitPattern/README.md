@@ -1,0 +1,2 @@
+# Tackling lock split pattern
+When your application uses shared, mutable variables that operate independently of one another (where their logic and functionality do not overlap), it is important to assign a separate lock to each variable. This safeguards their state effectively. Exemplify this statement via a meaningful example.
