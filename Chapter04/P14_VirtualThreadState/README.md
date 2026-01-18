@@ -1,2 +1,3 @@
 # Virtual thread states
-A Java thread can be in one of the following states: NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, or TERMINATED. Write a snippet of code that puts a virtual thread in each of these states.
+A Java thread can be in one of the following states: `NEW`, `RUNNABLE`, `BLOCKED`, `WAITING`, `TIMED_WAITING`, or `TERMINATED`. 
+Write a snippet of code that puts a virtual thread in each of these states.
