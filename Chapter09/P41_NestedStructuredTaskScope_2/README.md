@@ -1,2 +1,4 @@
 # Nesting scopes
-Provide two examples of nesting two `StructuredTaskScope`. First, nest them at the code level (imbricate them while they hierarchically remain on the same level, which means both of them have the same task scope owner). Second, nest them hierarchically; they will have different task scope owners. In both cases, explain the output.
+Provide two examples of nesting two `StructuredTaskScope`. First, nest them at the code level 
+(imbricate them while they hierarchically remain on the same level, which means both of them have the same task scope owner).
+ Second, nest them hierarchically; they will have different task scope owners. In both cases, explain the output.
