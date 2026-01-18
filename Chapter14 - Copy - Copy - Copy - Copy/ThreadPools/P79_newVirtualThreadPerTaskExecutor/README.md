@@ -1,2 +1,0 @@
-# Hooking built-in thread pools
-Summarize the main characteristics of each built-in Java thread pool (`Executor`). Provide a small example for each one and discuss the scenarios where they are most suitable.
