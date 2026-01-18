@@ -1,2 +1,2 @@
-# Hooking continuations 
-Provide a brief description of continuations and coroutines concepts.
+# Hooking _continuations_
+Provide a brief description of _continuations_ and _coroutines_ concepts.
