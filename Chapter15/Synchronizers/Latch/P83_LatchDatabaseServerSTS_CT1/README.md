@@ -2,7 +2,7 @@
 In the context of the previous application, let’s consider that the parent thread is 
 a virtual thread. Practically, we initiate the database server via the following 
 code: 
-
+ 
 ```
 Thread.ofVirtual().start(() -> {
   try {
