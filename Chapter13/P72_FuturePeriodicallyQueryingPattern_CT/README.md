@@ -1,4 +1,4 @@
-# Challenge time 
+# Challenge time  
 The previous code has two significant shortcomings. First, it stops after 50 pings 
 regardless of whether the server successfully answers our requests. Second, the 
 output is unintuitive, as the long values lack meaning for us. Challenge yourself 
