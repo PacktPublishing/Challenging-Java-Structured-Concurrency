@@ -1,2 +1,2 @@
-# Enriching StructuredTaskScope with ScopedValue
-Reiterate the ECSFinder problem from Chapter 6 to add more features using the ScopedValue API.
+# Enriching `StructuredTaskScope` with `ScopedValue`
+Reiterate the _ECSFinder_ problem from Chapter 9 to add more features using the ScopedValue API.

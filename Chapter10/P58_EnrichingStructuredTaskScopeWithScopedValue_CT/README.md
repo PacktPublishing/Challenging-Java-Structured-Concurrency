@@ -1,4 +1,4 @@
-# Challenge time 
+# Challenge time  
 What will happen if a `ScopedValue` is used outside its intended scope? For instance, what occurs 
 if the `electricChargeLocator()`, responsible for communication with the server of the 
 ElectricCharge company, attempts to query the `CE_PRIVATE_ECS_DISCOUNT` scoped value, which is 
