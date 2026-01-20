@@ -1,4 +1,4 @@
-# Using condition queues/variables pattern
+# Using condition queues/variables pattern 
 Consider the following real-life scenario: we need to implement an application that provides spelling checks
  for a given text. The application should count and highlight misspelled words.
  In the free or trial version, users are allowed a maximum of 10 misspellings per round

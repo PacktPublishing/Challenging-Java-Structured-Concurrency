@@ -1,2 +1,2 @@
-# Hooking virtual threads and sync code:
-Explain and exemplify via a meaningful snippet of code how virtual threads and sync code work together.
+# Introducing `ReentrantReadWriteLock` 
+Describe the behavior of a `ReentrantReadWriteLock`, provide its idiom of usage and exemplify it in code.

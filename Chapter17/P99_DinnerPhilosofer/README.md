@@ -1,2 +1,2 @@
-# Solving the dining philosophers problem
-Explain and exemplify the _dining philosophers_ problem.
+# Solving the Dining Philosophers problem
+Explain and exemplify the _Dining Philosophers_ problem.
