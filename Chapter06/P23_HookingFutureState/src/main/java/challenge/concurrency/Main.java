@@ -27,11 +27,11 @@ public class Main {
         System.setProperty("java.util.logging.SimpleFormatter.format",
                 "[%1$tT] [%4$-7s] %5$s %n");
 
-        KitchenTeam kitchenTeam = proffesionalKitchenTeam();       
+        KitchenTeam kitchenTeam = professionalKitchenTeam();       
         logger.info(() -> "Team size: " + kitchenTeam.members().length);
     }
 
-    public static KitchenTeam proffesionalKitchenTeam() throws InterruptedException {
+    public static KitchenTeam professionalKitchenTeam() throws InterruptedException {
 
         try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
 
